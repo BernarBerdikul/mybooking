@@ -18,4 +18,4 @@ class Command(BaseCommand):
         """ run telegram bot """
         bot.remove_webhook()
         bot.set_webhook(url=f"{BOT_URL}{TOKEN}")
-        bot.polling(skip_pending=True)
+        # bot.polling(skip_pending=True)
