@@ -12,7 +12,7 @@ TOKEN = os.getenv("telegram_bot_token")
 API_KEY = os.getenv("telegram_bot_address")
 
 # create a new Telegram Bot
-bot = telebot.TeleBot(TOKEN)
+bot = telebot.TeleBot("1918534669:AAEEDi-rJubL4Ogy1QNNqejU2knRUo0BRxE")
 
 
 # command description used in the "help" command
