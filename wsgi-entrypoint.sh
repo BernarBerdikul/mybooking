@@ -1,7 +1,7 @@
 #!/bin/sh
 
 python manage.py migrate
-python manage.py collectstatic --noinput
+#python manage.py collectstatic --noinput
 #rm -r django_static/*
 #cp -Rf static/* django_static
 
