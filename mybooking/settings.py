@@ -1,5 +1,6 @@
 import os
 from dotenv import load_dotenv
+import django_heroku
 
 load_dotenv()
 
@@ -109,3 +110,6 @@ SITE_URL = "http://localhost:8000"
 
 IS_LOCAL = True
 IS_TEST = True
+
+# Activate Django-Heroku.
+django_heroku.settings(locals())
