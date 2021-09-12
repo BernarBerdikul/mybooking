@@ -1,8 +1,8 @@
 from .settings import *
 
-ALLOWED_HOSTS = [
-    "localhost",
-    "127.0.0.1",
+ALLOWED_HOSTS += [
+    "178.88.60.212",
+    "https://mybooking-bot.herokuapp.com/"
 ]
 
 SITE_URL = "https://localhost:8000"

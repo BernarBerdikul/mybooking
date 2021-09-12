@@ -3,7 +3,6 @@ import os
 from mybooking.core.bot_services.get_days import get_days
 from mybooking.core.bot_services.get_room_info import get_room_with_schedule
 from mybooking.core.bot_services.get_rooms import get_rooms
-from mybooking.core.bot_services.get_time_periods import get_time_periods
 from mybooking.core.bot_services.get_users import get_users
 from mybooking.core.bot_services.is_user_allowed import is_user_allowed
 from mybooking.utils import constants
@@ -11,6 +10,7 @@ from mybooking.utils.validators import time_format_validation
 
 TOKEN = os.getenv("telegram_bot_token")
 API_KEY = os.getenv("telegram_bot_address")
+BOT_URL = "https://mybooking-bot.herokuapp.com/"
 
 # create a new Telegram Bot
 bot = telebot.TeleBot(TOKEN)
