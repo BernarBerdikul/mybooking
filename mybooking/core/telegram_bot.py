@@ -10,7 +10,6 @@ from mybooking.utils.validators import time_format_validation
 
 TOKEN = os.getenv("telegram_bot_token")
 API_KEY = os.getenv("telegram_bot_address")
-BOT_URL = "https://mybooking-bot.herokuapp.com/"
 
 # create a new Telegram Bot
 bot = telebot.TeleBot(TOKEN)

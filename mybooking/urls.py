@@ -1,6 +1,7 @@
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 urlpatterns = [
-    path("", admin.site.urls),
+    path('tgadmin/', admin.site.urls),
+    path('', include('mybooking.core.urls')),
 ]
