@@ -40,7 +40,8 @@ class Room(UpdateTimestampMixin, ValidateErrorMixin):
 
     def save(self, *args, **kwargs):
         """ overwrite save method to save room_name with symbol '№' """
-        self.room_name = f"№{self.room_name}"
+        if not self.room_name.startswith("№"):
+            self.room_name = f"№{self.room_name}"
         """ before save"""
         super().save(*args, **kwargs)
         """ after save"""
@@ -53,8 +54,10 @@ class Booking(UpdateTimestampMixin, ValidateErrorMixin):
         Room, on_delete=models.CASCADE, related_name="bookings",
         verbose_name="Кабинет"
     )
-    username = models.CharField(
-        max_length=32, verbose_name="Пользователь"
+    user = models.ForeignKey(
+        AllowedUser, on_delete=models.CASCADE,
+        null=True, blank=True, related_name="bookings",
+        verbose_name="Пользователь"
     )
     day = models.DateField(verbose_name="Дата бронирования")
     start_time = models.TimeField(verbose_name="Время начала")

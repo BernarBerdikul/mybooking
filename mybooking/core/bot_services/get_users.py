@@ -2,21 +2,22 @@ from mybooking.core.models import AllowedUser
 from telebot import types
 
 
-def get_users(username: str) -> types.InlineKeyboardMarkup:
+def get_users(
+        username: str,
+        new_booking_object_id: int
+) -> types.InlineKeyboardMarkup:
     users = AllowedUser.objects.all()
     markup = types.InlineKeyboardMarkup(row_width=2)
-    print(users)
     for user in users:
         """ add in InlineKeyboard """
         if user.username == username:
             text = "На себя"
-            callback_data = user.name
         else:
             text = user.name
-            callback_data = user.name
+        callback_data = user.id
         markup.add(
             types.InlineKeyboardButton(
-                text=text, callback_data=callback_data
+                text=text, callback_data=f"-@ {callback_data} - {new_booking_object_id}"
             )
         )
     return markup

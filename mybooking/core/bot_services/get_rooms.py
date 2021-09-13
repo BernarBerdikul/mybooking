@@ -16,14 +16,14 @@ def get_rooms() -> types.InlineKeyboardMarkup:
             "bookings",
             queryset=Booking.objects.filter(
                 day=today, start_time__lt=now, end_time__gt=now
-            ),
+            ).select_related('user'),
             to_attr="room_bookings",
         ),
     ).all()
     for room in rooms:
         """ prepare visual text """
         if room.room_bookings:
-            username = room.room_bookings[0].username
+            username = room.room_bookings[0].user.username
             is_booked = f"Занято - {username}"
         else:
             is_booked = "Свободно"

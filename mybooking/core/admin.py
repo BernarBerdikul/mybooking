@@ -42,12 +42,12 @@ class BookingAdmin(admin.ModelAdmin):
     """ A class used to represent a Room model in admin page """
 
     list_display = [
-        "id", "room", "username", "day", "start_time", "end_time"
+        "id", "room", "user", "day", "start_time", "end_time"
     ]
     list_display_links = [
-        "id", "room", "username", "day", "start_time", "end_time"
+        "id", "room", "user", "day", "start_time", "end_time"
     ]
-    fields = ("room", "username", "day", "start_time", "end_time")
-    search_fields = ("id", "room_name", "username")
+    fields = ("room", "user", "day", "start_time", "end_time")
+    search_fields = ("id", "room_name", "user")
     list_per_page = constants.OBJECTS_PER_PAGE_IN_ADMIN
     paginator = LargeTablePaginator

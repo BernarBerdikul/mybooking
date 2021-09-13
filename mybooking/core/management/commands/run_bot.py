@@ -16,6 +16,6 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         """ run telegram bot """
-        bot.remove_webhook()
+        # bot.remove_webhook()
         # bot.set_webhook(url=f"{BOT_URL}super_secret_webhook")
-        bot.polling(skip_pending=True)
+        bot.polling()
